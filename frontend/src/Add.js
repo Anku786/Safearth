@@ -1,5 +1,4 @@
 import React , {Component} from 'react';
-import Display from './Display';
 
 class Add extends Component{
   constructor(props){
@@ -39,7 +38,6 @@ class Add extends Component{
                 <button type='Submit' variant="contained" color="primary">
                   Add
                 </button>
-                <Display project={this.state.project}/>
               </form>
       </div>
       </div>

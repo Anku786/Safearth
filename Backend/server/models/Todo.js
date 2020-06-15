@@ -7,6 +7,6 @@ var Todo = new mongoose.Schema({
     }
 }, {
         collection: 'todos'
-    })
+    },{timestamps : true})
 
 module.exports = mongoose.model('Todo' , Todo);

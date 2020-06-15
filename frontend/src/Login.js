@@ -17,7 +17,7 @@ class Register extends Component{
   onSubmit = (event) =>{
     event.preventDefault();
     const {username , password} = this.state;
-    fetch('http://localhost:3000/users/signup' , {
+    fetch('http://localhost:3000/users/login' , {
       method : 'POST',
       headers : {
         'Content-Type' : 'application/json'
@@ -34,7 +34,7 @@ class Register extends Component{
       <div className="body">
         <h1>Create your Account</h1>
         <div className="register-form">
-              <form method='POST' action='http://localhost:3000/users/signup'>
+              <form method='POST' action='http://localhost:3000/users/login'>
                 Name : <input label="Name" name="username" /><br /><br />
                 Password : <input label="Password" name="password" /><br /><br />
                 <button type='Submit' variant="contained" color="primary">

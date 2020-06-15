@@ -4,15 +4,15 @@ var Todo = require('../models/Todo');
 var todoRouter = express.Router();
 todoRouter.use(bodyParser.json());
 
-todoRouter.get('/todo' , (req,res,next)=>{
-	 Todo.find({})
-    .then((todo) => {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
-        res.json(todo);
-    }, (err) => next(err))
-    .catch((err) => next(err));
-});
+todoRouter.get('/todo',function(req,res){
+	Todo.find({})
+	.then((todo)=>{
+		res.statusCode = 200;
+		res.setHeader('Content-Type','application/json');
+		res.json(todo);
+	},(err) => next(err))
+	.catch((err) => next(err));
+	});
 
 todoRouter.post('/newtodo' , (req,res,next)=>{
 	Todo.findOne({project : req.body.project}).then((todo)=>{

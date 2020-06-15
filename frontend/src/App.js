@@ -1,13 +1,19 @@
 import React , {Component} from 'react';
-import Display from './Display';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Register from './register';
+import Add from './Add';
+
 
 class App extends Component{
   
   render(){
     return(
-      <div>
-        <Display />
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path = '/' component = {Register}/>
+          <Route exact path = '/Add' component = {Add}/>
+        </Switch>
+      </Router>
       );
   }
 }
